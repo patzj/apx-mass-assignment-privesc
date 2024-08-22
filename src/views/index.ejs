@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+<body class="h-screen flex flex-col items-center justify-center space-y-4">
+    <header>
+        <h1 class="text-2xl font-bold">Coffee Log In</h1>
+    </header>
+
+    <main class="container mx-auto">
+        <form method="POST" class="flex flex-col items-center justify-center space-y-2">
+            <input type="text" name="username" placeholder="Username" class="input input-bordered w-full max-w-xs" />
+            <input type="password" name="password" placeholder="Password" class="input input-bordered w-full max-w-xs"/>
+            <input type="submit" value="Login" class="btn btn-primary w-full max-w-xs" />
+        </form>
+    </main>
+
+    <footer>
+        <% if (alert.error) { %>
+            <div class="alert alert-error"><%= alert.error %></div>
+        <% } %>
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+<%- include("partials/footer") %>
