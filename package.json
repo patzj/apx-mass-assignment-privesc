@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc && cp -r src/views dist/views",
+    "build": "npx tsc && cp -rf src/views dist/views",
     "start": "node dist/index.js",
     "dev": "npx ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

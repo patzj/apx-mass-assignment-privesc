@@ -9,14 +9,22 @@ services:
     environment:
       - MONGO_HOST=mongo
       - MONGO_PORT=27017
+    networks:
+      - backend
+    depends_on:
+      mongo:
+        condition: service_started
 
   mongo:
     container_name: mongo
     image: mongo
-    ports:
-      - 27017:27017
     volumes:
       - dbdata:/data/db
+    networks:
+      - backend
 
 volumes:
   dbdata:
+
+networks:
+  backend:
